@@ -926,6 +926,141 @@
           "Ref": "MyVPC"
         }
       }
+    },
+    "ssmParamVpcId": {
+      "Type" : "AWS::SSM::Parameter",
+      "Properties" : {
+        "Description" : {
+          "Fn::Sub": "The VPC ID for the ${projectName} ${env} environment."
+        },
+        "Name" : {
+          "Fn::Sub": "/${env}/${projectName}/Resources/VPC"
+        },
+        "Type" : "String",
+        "Value" : {
+          "Ref": "MyVPC"
+        }
+      }
+    },
+    "ssmParamPublicSubnet1": {
+      "Type" : "AWS::SSM::Parameter",
+      "Properties" : {
+        "Description" : {
+          "Fn::Sub": "The VPC PublicSubnet1 for the ${projectName} ${env} environment."
+        },
+        "Name" : {
+          "Fn::Sub": "/${env}/${projectName}/Resources/PublicSubnet1"
+        },
+        "Type" : "String",
+        "Value" : {
+          "Ref": "publicSubnet01"
+        }
+      }
+    },
+    "ssmParamPublicSubnet2": {
+      "Type" : "AWS::SSM::Parameter",
+      "Properties" : {
+        "Description" : {
+          "Fn::Sub": "The VPC PublicSubnet2 for the ${projectName} ${env} environment."
+        },
+        "Name" : {
+          "Fn::Sub": "/${env}/${projectName}/Resources/PublicSubnet2"
+        },
+        "Type" : "String",
+        "Value" : {
+          "Ref": "publicSubnet02"
+        }
+      }
+    },
+    "ssmParamPrivateSubnet1": {
+      "Type" : "AWS::SSM::Parameter",
+      "Properties" : {
+        "Description" : {
+          "Fn::Sub": "The VPC PrivateSubnet1 for the ${projectName} ${env} environment."
+        },
+        "Name" : {
+          "Fn::Sub": "/${env}/${projectName}/Resources/PrivateSubnet1"
+        },
+        "Type" : "String",
+        "Value" : {
+          "Ref": "privateSubnet01"
+        }
+      }
+    },
+    "ssmParamPrivateSubnet2": {
+      "Type" : "AWS::SSM::Parameter",
+      "Properties" : {
+        "Description" : {
+          "Fn::Sub": "The VPC PrivateSubnet2 for the ${projectName} ${env} environment."
+        },
+        "Name" : {
+          "Fn::Sub": "/${env}/${projectName}/Resources/PrivateSubnet2"
+        },
+        "Type" : "String",
+        "Value" : {
+          "Ref": "privateSubnet02"
+        }
+      }
+    },
+    "ssmParamPrivateSubnetSG": {
+      "Type" : "AWS::SSM::Parameter",
+      "Properties" : {
+        "Description" : {
+          "Fn::Sub": "The security group for the private subnet of the VPC for the ${projectName} ${env} environment."
+        },
+        "Name" : {
+          "Fn::Sub": "/${env}/${projectName}/Resources/VpcEndpointSecurityGroup"
+        },
+        "Type" : "String",
+        "Value" : {
+          "Ref": "EndpointSG"
+        }
+      }
+    },
+    "ssmParamPrivateSubnetSG": {
+      "Type" : "AWS::SSM::Parameter",
+      "Properties" : {
+        "Description" : {
+          "Fn::Sub": "The security group for the private subnet of the VPC for the ${projectName} ${env} environment."
+        },
+        "Name" : {
+          "Fn::Sub": "/${env}/${projectName}/Resources/VpcEndpointSecurityGroup"
+        },
+        "Type" : "String",
+        "Value" : {
+          "Ref": "EndpointSG"
+        }
+      }
+    },
+    "ssmParamElasticIP01": {
+      "Type" : "AWS::SSM::Parameter",
+      "Properties" : {
+        "Description" : {
+          "Fn::Sub": "The Elastic IP for the Public NAT Gateway 1 for the VPC of ${projectName} ${env} environment."
+        },
+        "Name" : {
+          "Fn::Sub": "/${env}/${projectName}/Resources/ElasticIP01"
+        },
+        "Type" : "String",
+        "Value" : {
+          "Ref": "ElasticIP01"
+        }
+      }
+    },
+    "ssmParamElasticIP02": {
+      "Type" : "AWS::SSM::Parameter",
+      "Properties" : {
+        "Description" : {
+          "Fn::Sub": "The Elastic IP for the Public NAT Gateway 2 for the VPC of ${projectName} ${env} environment."
+        },
+        "Name" : {
+          "Fn::Sub": "/${env}/${projectName}/Resources/ElasticIP02"
+        },
+        "Type" : "String",
+        "Value" : {
+          "Ref": "ElasticIP02"
+        }
+      }
     }
   },
   "Outputs": {
