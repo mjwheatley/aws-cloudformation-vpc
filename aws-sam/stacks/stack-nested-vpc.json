@@ -1017,21 +1017,6 @@
         }
       }
     },
-    "ssmParamPrivateSubnetSG": {
-      "Type" : "AWS::SSM::Parameter",
-      "Properties" : {
-        "Description" : {
-          "Fn::Sub": "The security group for the private subnet of the VPC for the ${projectName} ${env} environment."
-        },
-        "Name" : {
-          "Fn::Sub": "/${env}/${projectName}/Resources/VpcEndpointSecurityGroup"
-        },
-        "Type" : "String",
-        "Value" : {
-          "Ref": "EndpointSG"
-        }
-      }
-    },
     "ssmParamElasticIP01": {
       "Type" : "AWS::SSM::Parameter",
       "Properties" : {
